@@ -1,0 +1,8 @@
+.map {
+  display: flex;
+  justify-content: center;
+  margin-top: 19px;
+}
+.window {
+  display: grid;
+}

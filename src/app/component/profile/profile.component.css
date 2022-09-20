@@ -1,0 +1,49 @@
+.profile-image {
+  position: relative;
+  width: 120px;
+  margin: auto;
+}
+
+.profile-image > img {
+  border-radius: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile-image > button {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+}
+
+.form-container {
+  max-width: 500px;
+  padding: 30px;
+  margin-inline: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color:white;
+
+
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+}
+
+#profil {
+  color: navy;
+  display: flex;
+  justify-content: center;
+  font-size: revert;
+  font-style: revert;
+  font-family: ui-serif;
+}
+.sg {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto";
+  color: darkslategrey;
+}

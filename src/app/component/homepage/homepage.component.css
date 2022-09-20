@@ -1,0 +1,23 @@
+.example-form {
+  min-width: 150px;
+  max-width: 300px;
+  width: 30%;
+  margin: auto;
+}
+.ph{
+  margin:auto;
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+  font-family: emoji;
+}
+.example-full-width {
+  width: 100%;
+}
+.inline1 {
+  display: flex;
+  padding-left: 100px;
+}
+.bg{
+  margin-bottom: 0px;
+}

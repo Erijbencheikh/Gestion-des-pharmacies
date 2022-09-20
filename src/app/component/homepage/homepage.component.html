@@ -1,0 +1,28 @@
+<div class="bg">
+<div class="ph">
+<p>Enter your <b>address</b> and you will see the pharmacies there. </p>
+</div>
+<form class="example-form">
+  <div class="inline">
+    <mat-form-field class="example-full-width" >
+      <mat-label>Address</mat-label>
+      <input
+        matInput
+        #message
+        ngx-google-places-autocomplete
+        [options]="options"
+        #placesRef="ngx-places"
+        (onAddressChange)="handleAddressChange($event)"
+        placeholder="Ex. Rue Mongi Slim"
+      />
+    </mat-form-field>
+  </div>
+
+  <!-- <div class="inline1">
+    <button type="submit" mat-raised-button color="primary">Search</button>
+  </div> -->
+</form>
+
+<app-google-map id="map" [mapOptions]="mapOptions">
+</app-google-map></div>
+

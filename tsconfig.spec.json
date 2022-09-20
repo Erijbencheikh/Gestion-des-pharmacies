@@ -16,3 +16,128 @@
     "src/**/*.d.ts"
   ]
 }
+// userData: any;
+
+//   // private dbPath = 'clients';
+//   //  clientsRef: AngularFirestoreCollection<any>;
+
+//   constructor(
+//     public afs: AngularFirestore, // Inject Firestore service
+//     public afAuth: AngularFireAuth, // Inject Firebase auth service
+//     public router: Router,
+//     public ngZone: NgZone,
+//     private _snackBar: MatSnackBar
+//   ) {
+//     // this.clientsRef=afs.collection(this.dbPath)
+//     this.afAuth.authState.subscribe((user) => {
+//       if (user) {
+//         this.userData = user;
+//         localStorage.setItem('user', JSON.stringify(this.userData));
+//         JSON.parse(localStorage.getItem('user')!);
+//       } else {
+//         localStorage.setItem('user', 'null');
+//         JSON.parse(localStorage.getItem('user')!);
+//       }
+//     });
+//   }
+
+//   //  creatUserDoc = (user : any)=>{
+//   //   this.clientsRef.add(user)
+
+//   // }
+
+//   SetUserData(user: any) {
+//     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
+//       `clients/${user.uid}`
+//     );
+//     const userData: User = {
+//       uid: user.uid,
+//       email: user.email,
+//       name: user.name,
+//       age: user.age,
+//       password: user.password,
+//       photoURL: user.photoURL,
+//       phoneNumber:user.phoneNumber
+//     };
+//     return userRef.set(userData, {
+//       merge: true,
+//     });
+//   }
+
+//   SignUp(email: string, password: string) {
+//     return this.afAuth
+//       .createUserWithEmailAndPassword(email, password)
+//       .then((result) => {
+//         /* Call the SendVerificaitonMail() function when new user sign
+//         up and returns promise */
+
+//         this.SetUserData(result.user);
+//         // this.creatUserDoc(result.user)
+//       })
+//       .catch((error) => {
+//         this._snackBar.open(error.message, 'Undo', {
+//           duration: 4000,
+//         });
+//       });
+//   }
+
+//   GoogleAuth() {
+//     return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
+//       if (res) {
+
+//         this.router.navigate(['home']);
+//       }
+//     });
+//   }
+//   // Auth logic to run auth providers
+//   AuthLogin(provider: any) {
+//     return this.afAuth
+//       .signInWithPopup(provider)
+//       .then((result) => {
+//         this.ngZone.run(() => {
+//           this.router.navigate(['home']);
+//         });
+//         this.SetUserData(result.user);
+//       })
+//       .catch((error) => {
+//         this._snackBar.open(error.message, 'Undo', {
+//           duration: 4000,
+//         });
+//       });
+//   }
+
+//   SignOut() {
+//     return this.afAuth.signOut().then(() => {
+//       localStorage.removeItem('user');
+//       this.router.navigate(['sign-in']);
+//     });
+//   }
+
+
+//   get isLoggedIn(): boolean {
+//     const user = JSON.parse(localStorage.getItem('user')||('{}'));
+//     return user !== null ? true : false;
+//   }
+
+
+
+
+
+
+
+
+//   SignIn(email: string, password: string) {
+//     return this.afAuth
+//       .signInWithEmailAndPassword(email, password)
+//       .then((result) => {
+//         this.ngZone.run(() => {
+//           this.router.navigate(['home']);
+//         });
+//         this.SetUserData(result.user);
+//       })
+//       .catch((error) => {
+//         this._snackBar.open(error.message, 'Undo', {
+//           duration: 4000,
+//         });
+//       });
+//   }

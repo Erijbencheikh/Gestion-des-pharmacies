@@ -1,0 +1,85 @@
+<div class="form-container mat-elevation-z5">
+  <div class="sg"><h1>Sign Up a New User!</h1></div>
+
+  <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+    <div class="row">
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="displayName" />
+        <mat-error *ngIf="displayName?.errors?.['required']">
+          Name is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="address" />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <input matInput placeholder="Email address" formControlName="email" />
+        <mat-error *ngIf="email?.errors?.['required']">
+          Email address is required
+        </mat-error>
+        <mat-error *ngIf="email?.errors?.['email']">
+          Please enter a valid email address
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <input
+          matInput
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+        <mat-error *ngIf="password?.errors?.['required']">
+          Password is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <input
+          matInput
+          type="password"
+          placeholder="Confirm Password"
+          formControlName="confirmPassword"
+        />
+        <mat-error *ngIf="confirmPassword?.errors?.['required']">
+          Confirm Password is required
+        </mat-error>
+      </mat-form-field>
+      <mat-error *ngIf="signUpForm.errors?.['passwordsDontMatch']">
+        Passwords should match
+      </mat-error>
+    </div>
+
+    <div class="row1">
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+
+      >
+        Sign Up!
+      </button>
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        (click)="authService.googleSignin()"
+      >
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/gestion-des-pharmacies-99b9e.appspot.com/o/google%20logo.png?alt=media&token=b2bc6bf6-7f15-44a7-9ccf-33ddd27848bb"
+          alt="absent"
+          height="20px"
+          width="20px"
+        />
+        Continue with google
+      </button>
+    </div>
+  </form>
+</div>
+<!-- (click)="authService.signUp(email, password)" -->

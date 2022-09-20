@@ -1,0 +1,86 @@
+<div
+  class="form-container mat-elevation-z5 text-center"
+  *ngIf="user$ | async as user"
+>
+  <h1 class="sg">Update Profile</h1>
+  <div class="profile-image">
+    <img
+      width="120"
+      height="120"
+      class="margin-top mat-elevation-z1"
+      [src]="
+        user.photoURL
+          ? user.photoURL
+          : 'https://firebasestorage.googleapis.com/v0/b/gestion-des-pharmacies-99b9e.appspot.com/o/image-placeholder.png?alt=media&token=f0117e81-be43-4674-a39d-bf6f206d3f50'
+      "
+    />
+    <button mat-mini-fab (click)="inputField.click()">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+  <input #inputField hidden type="file" (change)="uploadFile($event, user)" />
+  <form class="margin-top" [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+    <div class="row">
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          formControlName="firstName"
+          placeholder="First Name"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          formControlName="lastName"
+          placeholder="Last Name"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          formControlName="displayName"
+          placeholder="Display Name"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          type="tel"
+          matInput
+          formControlName="phoneNumber"
+          placeholder="PhoneNumber"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field>
+        <input
+          type="number"
+          matInput
+          formControlName="age"
+          placeholder="Age"
+          min="18"
+          max="100"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          formControlName="address"
+          placeholder="Address"
+        />
+      </mat-form-field>
+    </div>
+
+    <button type="submit" class="margin-top" mat-raised-button color="primary">
+      Save
+    </button>
+  </form>
+</div>

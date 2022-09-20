@@ -1,0 +1,26 @@
+.row {
+  display: flex;
+  gap: 16px;
+}
+.sg {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto";
+  color: darkslategrey;
+}
+.row1 {
+  display: flex;
+  gap: 16px;
+  justify-items: stretch;
+  justify-content: center;
+}
+.form-container {
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 10px;
+  margin-inline: auto;
+  margin-top: 30px;
+  background-color:white;
+  margin-bottom: 35px;
+}

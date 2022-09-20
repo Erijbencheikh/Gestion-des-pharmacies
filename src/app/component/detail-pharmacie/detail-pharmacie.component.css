@@ -1,0 +1,72 @@
+table {
+  width: 100%;
+  margin: auto;
+}
+.demo-table {
+  width: 100%;
+}
+.block1 {
+  padding: 5px;
+}
+.phar {
+  padding: 15px;
+  /* display: flex; */
+  /* justify-content: center; */
+}
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 23%;
+}
+.example-card {
+  max-width: 500px;
+  max-height: 450px;
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  align-items: center;
+  justify-content: space-between;
+}
+.example-card {
+  padding: 5px;
+  margin-top: 20px;
+  margin-left: 370px;
+  margin-left: 370px;
+}
+
+.positive {
+  color: green;
+}
+.bg{
+  margin-bottom: 147px;    /*en cas t7at il tableau hna nbadel fel margin-bottom*/
+}
+.negative {
+  color: red;
+}
+.flt {
+  /* padding: 50px; */
+  display: flex;
+  margin-left: -298px;
+  padding: 300px;
+  margin-top: -330px;
+}
+.mat-elevation-z8 {
+  margin-top: -290px;
+}

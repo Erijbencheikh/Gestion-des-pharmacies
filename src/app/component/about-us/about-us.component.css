@@ -1,0 +1,21 @@
+.image {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 5px;
+  width: 350px;
+  height: 350px;
+}
+.ab {
+  display: flex;
+  justify-content: center;
+}
+.ac {
+  margin-top: 30px;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+.blc1{
+  margin-top: 5px;
+  margin-bottom: 16px;
+}

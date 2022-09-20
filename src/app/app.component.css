@@ -1,0 +1,25 @@
+.mat-toolbar {
+  justify-content: space-between;
+}
+
+.content {
+  padding: 32px;
+
+}
+
+.profile-image-toolbar {
+  border-radius: 100%;
+  margin-right: 8px;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.search {
+  right: 1000px;
+  left: 500px;
+}
+
+.searchIcon {
+  right: 1000px;
+  left: 470px;
+}

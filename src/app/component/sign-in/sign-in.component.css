@@ -1,0 +1,32 @@
+.sg {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto";
+  color: darkslategrey;
+}
+.form-container {
+  max-width: 550px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: white;
+  /* display: flex;
+  justify-content: center; */
+  margin-inline: auto;
+  margin-top: 90px;
+  margin-bottom: 128px;
+}
+.row1 {
+  display: flex;
+  gap: 16px;
+  justify-items: stretch;
+  justify-content: center;
+}
+.lien {
+  display: flex;
+  margin-top: 15px;
+}
+.bg {
+  width: 100%;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/gestion-des-pharmacies-99b9e.appspot.com/o/website-rays-background-pattern-1637863.png?alt=media&token=5c57d973-4003-4369-b945-15f6b738ec49");
+}

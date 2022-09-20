@@ -1,0 +1,84 @@
+<div class="picard">
+  <mat-card class="example-card">
+    <div class="blc1">
+        <img mat-card-image  id="pic" src="{{ element.image }}" alt="Picture is absent" />
+      <div class="js">
+        <mat-card-title>{{ element.nom_medicament }} </mat-card-title>
+
+        <mat-card-subtitle>{{
+          element.classe_therapeutique
+        }}</mat-card-subtitle>
+
+        <mat-card-content>
+          <p><b>Form: </b> {{ element.forme }}</p>
+
+          <p><b>Dosage:</b> {{ element.dosage }}</p>
+          <div class="line">
+            <b>Disponibility: </b>
+          </div>
+          <div class="line">
+            <p
+              [ngStyle]="{
+                color: element.disponibilite === 'En stock' ? 'green' : 'red'
+              }"
+            >
+              {{ element.disponibilite }}
+            </p>
+          </div>
+
+          <p><b>Price: </b>{{ element.prix }}</p>
+        </mat-card-content>
+      </div>
+    </div>
+
+    <div class="des">
+      <mat-card-content>
+        <p>
+          <b><u>Description: </u> </b>{{ element.description }}
+        </p>
+      </mat-card-content>
+    </div>
+  </mat-card>
+</div>
+
+<!-- <div class="parag">
+  <p>
+    <b>Voila, les pharmacies qui contiennent "{{ element.nom_medicament }}".</b>
+  </p>
+</div>
+
+<div class="blc-pharma">
+  <mat-card class="disMed">
+    <div class="pharma">
+      <div class="profile-image">
+        <img
+          width="130"
+          height="130"
+          mat-card-image
+          src="https://firebasestorage.googleapis.com/v0/b/gestion-des-pharmacies-99b9e.appspot.com/o/78-removebg-preview.png?alt=media&token=d35f7f7c-77b8-443c-8538-d9be5bc355bc"
+          alt="Picture is absent"
+        />
+      </div>
+
+      <mat-card-content class="nom">
+        <p>Sakka Bechir</p>
+      </mat-card-content>
+    </div>
+  </mat-card>
+  <mat-card class="disMed">
+    <div class="pharma">
+      <div class="profile-image">
+        <img
+          width="130"
+          height="130"
+          mat-card-image
+          src="https://firebasestorage.googleapis.com/v0/b/gestion-des-pharmacies-99b9e.appspot.com/o/78-removebg-preview.png?alt=media&token=d35f7f7c-77b8-443c-8538-d9be5bc355bc"
+        />
+      </div>
+
+      <mat-card-content class="nom">
+        <p>MEHDI Hechmi</p>
+      </mat-card-content>
+    </div>
+  </mat-card>
+</div> -->

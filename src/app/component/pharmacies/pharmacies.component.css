@@ -1,0 +1,66 @@
+table {
+  width: 100%;
+  margin: auto;
+}
+.demo-table {
+  width: 100%;
+}
+.block1 {
+  padding: 20px;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 23%;
+}
+.prg {
+  display: flex;
+  justify-content: center;
+  font-size: 33px;
+  font-family: emoji;
+  margin-top: 20px;
+}
+.prg1 {
+  display: flex;
+  justify-content: center;
+  font-size: 33px;
+  margin-top: 10px;
+  font-family: emoji;
+}
+.prg2 {
+  display: flex;
+  justify-content: center;
+  font-size: 33px;
+  margin-top: 10px;
+  font-family: emoji;
+}
+
+.filter {
+  color: blue;
+}
+
+.flt {
+  padding: 300px;
+  margin-top: -330px;
+}
+.mat-elevation-z8 {
+  margin-top: -290px;
+}

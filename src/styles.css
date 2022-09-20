@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; 
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/gestion-des-pharmacies-99b9e.appspot.com/o/website-rays-background-pattern-1637863.png?alt=media&token=5c57d973-4003-4369-b945-15f6b738ec49");
+background-repeat: no-repeat;
+background-size: 100% auto ;
+background-position: center top; }

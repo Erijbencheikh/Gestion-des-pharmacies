@@ -1,0 +1,122 @@
+<div class="bg">
+  <mat-card class="example-card">
+    <div id="map">
+      <google-map
+        [options]="mapOptions"
+        class="map"
+        width="250px"
+        height="200px"
+      >
+        <map-marker
+          [position]="{ lat: element.lat, lng: element.lng }"
+          [options]="markerOptions"
+        ></map-marker>
+      </google-map>
+    </div>
+    <div class="phar">
+      <mat-card-title>{{ element.nom_pharmacie }} </mat-card-title>
+      <mat-card-subtitle>Pharmacy</mat-card-subtitle>
+      <mat-card-content>
+        <p><b>Owner: </b> {{ element.proprietaire_pharmacie }}</p>
+        <p><b>Phone: </b> +216 {{ element.num_pharmacie }}</p>
+      </mat-card-content>
+    </div>
+  </mat-card>
+
+  <div class="block1">
+    <mat-form-field appearance="standard" class="flt">
+      <mat-label>Filter</mat-label>
+      <input
+        matInput
+        (keyup)="applyFilter($event)"
+        placeholder="Ex. Doliprane"
+        #input
+      />
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>No.</th>
+        <td mat-cell *matCellDef="let element; let i = index">
+          {{ i + 1 }}
+        </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element?.nom_medicament?.stringValue }}
+        </td>
+      </ng-container>
+
+      <!-- forme Column -->
+      <ng-container matColumnDef="forme">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Forme</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element?.forme?.stringValue }}
+        </td>
+      </ng-container>
+
+      <!-- disponibilité Column -->
+      <ng-container matColumnDef="disponibilite">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Disponibilité</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [ngClass]="{
+            positive: element?.disponibilite?.stringValue === 'En stock',
+            negative: element?.disponibilite?.stringValue === 'Hors stock'
+          }"
+        >
+          {{ element?.disponibilite?.stringValue }}
+        </td>
+      </ng-container>
+
+      <!-- Actions -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+        <td mat-cell *matCellDef="let element; let i = index">
+          <button mat-icon-button>
+            <button
+              (click)="getObjectById(i + 1)"
+              mat-button
+              color="primary"
+              routerLink="/detailMedicament/{{ i + 1 }}"
+            >
+              Details
+            </button>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        mat-row
+        [class.demo-row-is-clicked]="clickedRows.has(row)"
+        *matRowDef="let row; columns: displayedColumns"
+      ></tr>
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">
+          No data matching the filter "{{ input.value }}"
+        </td>
+      </tr>
+      <table>
+        <mat-paginator
+          [pageSizeOptions]="[5, 10, 25, 100]"
+          aria-label="Select page of users"
+        ></mat-paginator>
+
+        <div *ngIf="!clickedRows.size"></div>
+
+        <ul>
+          <li *ngFor="let clickedRow of clickedRows">
+            Clicked on {{clickedRow.name}
+          </li>
+        </ul>
+      </table>
+    </table>
+  </div>
+</div>

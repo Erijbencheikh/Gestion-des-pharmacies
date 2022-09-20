@@ -1,0 +1,18 @@
+<google-map [options]="mapOptions"  class="map" height="400px" width="700px">
+  <map-marker
+    #marker="mapMarker"
+    *ngFor="let pharmacie of pharmacies"
+    [position]="{ lat: pharmacie.lat, lng: pharmacie.lng }"
+    [options]="markerOptions"
+    (mapClick)="openInfoWindow(marker,pharmacie)"
+
+  >
+    <map-info-window #infoWindow="mapInfoWindow" class="window">
+      <b>Pharmacy Name: </b>{{ element.nom_pharmacie }} <b>Location: </b
+      >{{ element.loc }} <b>Phone: </b> {{ element.num_pharmacie }}
+      <a color="primary"    routerLink="/detailPharmacie/{{ element.id }}"
+        >See all details</a
+      >
+    </map-info-window>
+  </map-marker>
+</google-map>

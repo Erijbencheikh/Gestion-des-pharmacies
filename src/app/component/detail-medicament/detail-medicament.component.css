@@ -1,0 +1,75 @@
+.example-card {
+  max-width: 800px;
+  flex-direction: column;
+  display: flex;
+  padding: 40px;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+.blc1 {
+  display: flex;
+  flex-direction: row;
+  font-size:larger;
+
+  align-items: center;
+}
+
+#pic {
+  width: 200px;
+  height: 180px;
+  margin-right: 50px;
+  margin-top: 20px;
+
+  padding-left: 10px;
+}
+.disMed {
+  width: 20%;
+  margin: auto;
+  border-radius: 10px;
+}
+.des {
+  margin-top: 20px;
+}
+.blc-pharma {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.nom {
+  display: flex;
+  justify-content: center;
+}
+
+.parag {
+  display: flex;
+  justify-content: left;
+  margin-top: 10px;
+  font-size: larger;
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+.line {
+  white-space: rowrap;
+  display: inline-block;
+  clear: both;
+}
+.profile-image {
+  position: relative;
+  width: 100px;
+  margin: auto;
+}
+
+.profile-image > img {
+  border-radius: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.picard
+{
+  display:flex;
+  justify-content: center;
+  margin:auto;
+  margin-top: 20px;
+}
